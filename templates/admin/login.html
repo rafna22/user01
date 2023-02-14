@@ -1,0 +1,59 @@
+{% extends "admin/headerfooter.html" %}
+{% block content %}
+  <!-- //header-ends -->
+<!-- main content start -->
+<div class="main-content">
+
+    <!-- content -->
+    <div class="container-fluid content-top-gap">
+
+        <!-- breadcrumbs -->
+        <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb my-breadcrumb">
+                <li class="breadcrumb-item"><a href="/adminindex/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Login Here</li>
+            </ol>
+        </nav>
+        <!-- //breadcrumbs -->
+        <!-- forms -->
+        <section class="forms">
+             <div class="card card_border py-2 mb-4">
+                <div class="card-body">
+                    <h4 style="text-align: center ;color: red ">{{error}}</h4>
+                    <form action="/adminlogin/" method="post">
+                        {% csrf_token %}
+                        
+                        <div class="form-group">
+                            
+
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail4" class="input__label">Email</label>
+                                <input type="email" class="form-control input-style" id="inputEmail4"
+                                    placeholder="Email" name="email">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputPassword4" class="input__label">Password</label>
+                                <input type="password" class="form-control input-style" id="inputPassword4"
+                                    placeholder="Password" name="password">
+                            </div>
+                        </div>
+                       
+                       
+                        
+                        <button type="submit" class="btn btn-primary btn-style mt-4">Login</button>
+                    </form>
+                </div>
+            </div>
+                   </section>
+        <!-- //forms -->
+        </section>
+        <!-- //forms  -->
+
+    </div>
+    <!-- //content -->
+
+</div>
+<!-- main content end-->
+</section>
+<!--footer section start-->
+{% endblock %}

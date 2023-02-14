@@ -1,0 +1,48 @@
+{% extends "admin/headerfooter.html" %}
+{% block content %}
+  <!-- //header-ends -->
+<!-- main content start -->
+<div class="main-content">
+
+    <!-- content -->
+    <div class="container-fluid content-top-gap">
+
+        <!-- breadcrumbs -->
+        <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb my-breadcrumb">
+                <li class="breadcrumb-item"><a href="/adminindex/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Display</li>
+            </ol>
+        </nav>
+<div class="container pt-lg-5 pt-md-3 p-lg-4 pb-md-3 my-lg-3" >
+<style>
+table,th,td{
+    border:1px solid black;
+    border-collapse: collapse;
+    padding: 15px;
+}
+</style>
+<table>
+<tr>
+    <th>S.No</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Password</th>
+    <th>Address</th>
+</tr>
+{% for x in datas %}
+<tr>
+    <td>{{forloop.counter}}</td>
+    <td>{{x.name}}</td>
+    <td>{{x.email}}</td>
+    <td>{{x.password}}</td>
+    <td>{{x.address}}</td>
+    <td><a href="/adminupdate/?regid={{x.id}}"><i class="fa fa-edit"></i></a> </td>
+    <td><a href="/admindelete/?regid={{x.id}}"><i class="fa fa-trash"></i></a> </td>
+</tr>
+{% endfor %}
+</table>
+</div>
+</div>
+</div>
+{% endblock %}

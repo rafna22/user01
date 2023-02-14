@@ -1,0 +1,61 @@
+{% extends "head.html" %}
+{% block content %}
+  <!--/w3l-inner-page-breadcrumb-->
+  <section class="w3l-inner-page-breadcrumb">
+    <div class="breadcrumb-bg py-5">
+      <div class="container pt-lg-5 pt-md-3 p-lg-4 pb-md-3 my-lg-3">
+        <h2 class="title pt-5">Register Here</h2>
+       
+      </div>
+    </div>
+  </section>
+  <!-- //w3l-inner-page-breadcrumb-->
+  <!-- /contact-section -->
+  <div class="w3l-contact-10 py-5" id="contact">
+    <div class="form-41-mian py-lg-5 py-md-4 py-2">
+      <div class="container">
+       
+        <div class="contacts-5-grid-main mt-4">
+          <div class="contacts-5-grid">
+           
+           
+           
+          </div>
+         
+         
+          <div class="form-inner-cont">
+            <h4 style="text-align: center ;color: red ">{{error}}</h4>
+            <form action="/reg/" method="post" class="signin-form" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="form-grids">
+                <div class="form-input" data-aos="fade-down">
+                  <input type="text" name="name" placeholder="Name *" required="" />
+                </div>
+                
+                <div class="form-input" data-aos="fade-up">
+                  <input type="email" name="email" placeholder="Email *" required />
+                </div>
+                <div class="form-input" data-aos="fade-down">
+                  <input type="password" name="password" placeholder="Password *" required />
+                </div>
+                <div class="form-input" data-aos="fade-up">
+                  <input type="text" name="phone" placeholder="Phone Number *" required />
+                </div>
+                <div class="form-input" data-aos="fade-up">
+                  <input type="file" name="image" placeholder="image *" required />
+                </div>
+              </div>
+              
+              <div class="text-center mt-3">
+                <button class="btn btn-style btn-primary">Register</button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+      <!-- //contacts-5-grid -->
+    </div>
+  </div>
+
+ {% endblock %}
